@@ -12,6 +12,9 @@ replaced some of the depricated methods and classes and then I removed some warn
 segments of code, e.g., unused imports, @Override, etc.
 
 Other than that it is still the same project whose author is Phillip E. Trewhella.
-
-
 Licencing is same as the original jnipp project, that is LGPL...whatever version that was :)
+
+ - bin: compiled JAR and BAT script for running the `jnipp` GUI
+ - docs: official API documentation and User Guide
+ - include: include files for C++ part
+ - JNI++: the NetBeans project
