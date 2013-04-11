@@ -1,27 +1,24 @@
 package net.sourceforge.jnipp.gui;
 
-public class ProjectClass
-{
-	String _className = null;
-	ProjectSettingsAdapter _projectSettings = new ProjectSettingsAdapter();
+public class ProjectClass {
 
-	public ProjectClass(String className)
-	{
-		_className = className;
-	}
-	
-	public ProjectSettingsAdapter getProjectSettingsAdapter()
-	{
-		return _projectSettings;
-	}
+    String _className = null;
+    ProjectSettingsAdapter _projectSettings = new ProjectSettingsAdapter();
 
-	public String getClassName()
-	{
-		return (_className);
-	}
+    public ProjectClass(String className) {
+        _className = className;
+    }
 
-	public String toString()
-	{
-		return (_className);
-	}
+    public ProjectSettingsAdapter getProjectSettingsAdapter() {
+        return _projectSettings;
+    }
+
+    public String getClassName() {
+        return (_className);
+    }
+
+    @Override
+    public String toString() {
+        return (_className);
+    }
 }

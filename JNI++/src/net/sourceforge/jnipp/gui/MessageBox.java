@@ -7,43 +7,37 @@ import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import java.awt.event.*;
 
-public class MessageBox extends JDialog implements ActionListener 
-{
+public class MessageBox extends JDialog implements ActionListener {
 
-	JButton cmdOk;
+    JButton cmdOk;
 
-	//TODO: Make this thing ALOT less ugly.
+    //TODO: Make this thing ALOT less ugly.
+    public MessageBox(JFrame parentframe, String title, String label) {
+        super(parentframe, title, true);
 
-	public MessageBox(JFrame parentframe,String title,String label)
-	{
-		super(parentframe,title,true);
-		
-		JLabel lbl = new JLabel(label);
-		
-		cmdOk = new JButton("Ok");
-		cmdOk.addActionListener(this);
-		
-		getContentPane().add(lbl, BorderLayout.NORTH);
-		getContentPane().add(cmdOk, BorderLayout.SOUTH);
+        JLabel lbl = new JLabel(label);
 
-		initWindowListener();
-		pack();
-	}
+        cmdOk = new JButton("Ok");
+        cmdOk.addActionListener(this);
 
-	public void actionPerformed(ActionEvent e)
-	{
-		hide();
-	}
+        getContentPane().add(lbl, BorderLayout.NORTH);
+        getContentPane().add(cmdOk, BorderLayout.SOUTH);
 
-	private void initWindowListener()
-	{
-		this.addWindowListener( new WindowAdapter()
-		{
-			public void windowClosing(WindowEvent e)
-			{
-				hide();
-			}
-		});
-	}
+        initWindowListener();
+        pack();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        hide();
+    }
+
+    private void initWindowListener() {
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                hide();
+            }
+        });
+    }
 }
-

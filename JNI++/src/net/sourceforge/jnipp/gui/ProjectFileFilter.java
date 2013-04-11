@@ -3,21 +3,20 @@ package net.sourceforge.jnipp.gui;
 import javax.swing.filechooser.FileFilter;
 import java.io.File;
 
-public class ProjectFileFilter extends FileFilter
-{
-	public boolean accept(File file)
-	{
-		if (file.isDirectory())
-		{
-         	   return true;
-        	}
+public class ProjectFileFilter extends FileFilter {
 
-		String fileName = file.getName();
-		return (fileName.endsWith(".xml"));
-	}
+    @Override
+    public boolean accept(File file) {
+        if (file.isDirectory()) {
+            return true;
+        }
 
-	public String getDescription()
-	{
-		return (".xml");
-	}
+        String fileName = file.getName();
+        return (fileName.endsWith(".xml"));
+    }
+
+    @Override
+    public String getDescription() {
+        return (".xml");
+    }
 }

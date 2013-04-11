@@ -5,52 +5,46 @@ import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
-public class GNUMakefileSettings 
-{
-	private String name = null;
-	private Project project = null;
-	
-	public GNUMakefileSettings(Project project, Element elementNode)
-		throws DOMException, ProjectFormatException
-	{
-		this.project = project;
-		initialize( elementNode );
-	}
+public class GNUMakefileSettings {
 
-	public GNUMakefileSettings(Project project, String name)
-	{
-		this.project = project;
-		setName( name );
-	}
+    private String name = null;
+    private Project project = null;
 
-	private void initialize(Element elementNode)
-		throws DOMException, ProjectFormatException
-	{
-		if ( elementNode.hasAttribute( "name" ) == false )
-			throw new ProjectFormatException( "attribute \"name\" required for \"nmakefile\" element" );
-		name = elementNode.getAttribute( "name" );
-	}
-	
-	public String getName()
-	{
-		return name;
-	}
+    public GNUMakefileSettings(Project project, Element elementNode)
+            throws DOMException, ProjectFormatException {
+        this.project = project;
+        initialize(elementNode);
+    }
 
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-	
-	public Project getProject()
-	{
-		return project;
-	}
+    public GNUMakefileSettings(Project project, String name) {
+        this.project = project;
+        setName(name);
+    }
 
-	public Node getDOMNode(Document targetDoc)
-	{
-		Element node = targetDoc.createElement( "gnumakefile" );
-		node.setAttribute( "name", name );
+    private void initialize(Element elementNode)
+            throws DOMException, ProjectFormatException {
+        if (elementNode.hasAttribute("name") == false) {
+            throw new ProjectFormatException("attribute \"name\" required for \"nmakefile\" element");
+        }
+        name = elementNode.getAttribute("name");
+    }
 
-		return node;
-	}
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public Node getDOMNode(Document targetDoc) {
+        Element node = targetDoc.createElement("gnumakefile");
+        node.setAttribute("name", name);
+
+        return node;
+    }
 }
