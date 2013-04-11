@@ -299,8 +299,8 @@ public class ClassNode {
      * @exception ClassNotFoundException
      * @see #getClassNode
      */
-    public void init()
-            throws ClassNotFoundException {
+    @SuppressWarnings("empty-statement")
+    public void init() throws ClassNotFoundException {
         if (isTypePrimitive(fullyQualifiedClassName) == true) {
             primitive = true;
             className = fullyQualifiedClassName;
@@ -348,10 +348,12 @@ public class ClassNode {
                     Constructor[] declaredCtors = theClass.getDeclaredConstructors();
                     Arrays.sort(declaredCtors,
                             new Comparator() {
+                        @Override
                         public int compare(Object o1, Object o2) {
                             return o1.toString().compareTo(o2.toString());
                         }
 
+                        @Override
                         public boolean equals(Object obj) {
                             return false;
                         }
@@ -363,10 +365,12 @@ public class ClassNode {
                     Method[] declaredMethods = theClass.getDeclaredMethods();
                     Arrays.sort(declaredMethods,
                             new Comparator() {
+                        @Override
                         public int compare(Object o1, Object o2) {
                             return o1.toString().compareTo(o2.toString());
                         }
 
+                        @Override
                         public boolean equals(Object obj) {
                             return false;
                         }
@@ -378,10 +382,12 @@ public class ClassNode {
                     Class[] declaredClasses = theClass.getDeclaredClasses();
                     Arrays.sort(declaredClasses,
                             new Comparator() {
+                        @Override
                         public int compare(Object o1, Object o2) {
                             return o1.toString().compareTo(o2.toString());
                         }
 
+                        @Override
                         public boolean equals(Object obj) {
                             return false;
                         }
@@ -393,10 +399,12 @@ public class ClassNode {
                     Field[] declaredFields = theClass.getDeclaredFields();
                     Arrays.sort(declaredFields,
                             new Comparator() {
+                        @Override
                         public int compare(Object o1, Object o2) {
                             return o1.toString().compareTo(o2.toString());
                         }
 
+                        @Override
                         public boolean equals(Object obj) {
                             return false;
                         }

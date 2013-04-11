@@ -99,6 +99,7 @@ public class DynamicClassLoader
         }
     }
 
+    @Override
     protected Class findClass(String name)
             throws ClassNotFoundException {
         String fileName = name.replace('.', '/') + ".class";

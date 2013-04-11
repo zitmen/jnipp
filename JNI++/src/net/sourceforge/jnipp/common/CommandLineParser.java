@@ -99,6 +99,7 @@ public class CommandLineParser {
      * @return String representation of class instance.
      * @see #paramMap
      */
+    @Override
     public String toString() {
         return paramMap.toString();
     }

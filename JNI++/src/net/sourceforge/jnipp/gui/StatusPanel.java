@@ -54,7 +54,7 @@ public class StatusPanel extends JScrollPane {
                     Thread.currentThread().sleep(100);
                     input = this.readLine(pin);
                     SwingUtilities.invokeLater(runnable);
-                } catch (Exception e) {
+                } catch (InterruptedException | IOException e) {
                     e.printStackTrace();
                 }
             }

@@ -500,10 +500,10 @@ public class ProjectDetailsPane extends JTabbedPane implements
                 chkProxy_doit.setSelected(true);
             }
             settings.setProxyGenerateGetters(chkProxy_generateGetters.isSelected());
-            return;
         }
     }
 
+    @Override
     public void keyTyped(KeyEvent e) {
         Object source = e.getSource();
         ProjectAdapter project = App.getProject();
