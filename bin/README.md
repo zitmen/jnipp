@@ -1,0 +1,1 @@
+The `jnipp.jar` is just renamed `../JNI++/dist/JNI__.jar`.
